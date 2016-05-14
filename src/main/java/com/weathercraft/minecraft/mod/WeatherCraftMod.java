@@ -1,6 +1,7 @@
 package com.weathercraft.minecraft.mod;
 
 import com.weathercraft.minecraft.treegen.TemporizedTreeBlock;
+import net.minecraft.client.Minecraft;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -21,5 +22,6 @@ public class WeatherCraftMod {
     @EventHandler
     public void init(FMLInitializationEvent event) {
         TemporizedTreeBlock ttB = new TemporizedTreeBlock();
+
     }
 }
