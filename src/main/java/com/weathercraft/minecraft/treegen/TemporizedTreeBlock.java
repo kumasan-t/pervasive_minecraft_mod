@@ -37,6 +37,7 @@ public final class TemporizedTreeBlock extends Block {
         super(Material.rock);
         GameRegistry.registerBlock(this,"TreeHouse");
         setDefaultState(this.blockState.getBaseState().withProperty(AGE,0));
+        setUnlocalizedName("TreeHouse");
         setCreativeTab(CreativeTabs.tabBlock);
         setHardness(0.5f);
         setLightLevel(1f);
