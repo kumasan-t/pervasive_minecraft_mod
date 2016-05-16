@@ -94,7 +94,7 @@ public class TemporizedTreeGeneratorUtils {
      * @param blockType     Specify what kind of block will
      *                      be spawned.
      */
-    private static void drawLineBlocks(World world, BlockPos pos, int height, int xAxis, int zAxis, int offset, IBlockState blockType) {
+    public static void drawLineBlocks(World world, BlockPos pos, int height, int xAxis, int zAxis, int offset, IBlockState blockType) {
         int end = Math.abs(xAxis);
         for (int i = xAxis; i <= end; i++) {
             world.setBlockState(new BlockPos(pos.getX() + offset + i, pos.getY() + height, pos.getZ() + offset + zAxis),blockType);
@@ -180,7 +180,12 @@ public class TemporizedTreeGeneratorUtils {
      *                          is translated from the given pos.
      * @param trunkBlockType    Specifies the material for the trunk.
      * @param foliageBlockType  Specifies the material for the foliage
-     * @param ladderBlockType   Specifies the material for the ladder.
+     * @param ladderBlockType   Specifies the material for the ladder.7
+     * @param age               Property of the placed block, needed in order
+     *                          to make the trees grow. The new block MUST
+     *                          have a PropertyInteger with value range
+     *                          from 0 to 15 in order to work with this
+     *                          set of functions.
      */
     public static void generateTree(World world, BlockPos pos,IBlockState state,
                               int trunkSize,int maxFoliageHeight, int offset, IBlockState trunkBlockType,
@@ -227,6 +232,11 @@ public class TemporizedTreeGeneratorUtils {
      * @param trunkBlockType    Specifies the material for the trunk.
      * @param foliageBlockType  Specifies the material for the foliage
      * @param ladderBlockType   Specifies the material for the ladder.
+     * @param age               Property of the placed block, needed in order
+     *                          to make the trees grow. The new block MUST
+     *                          have a PropertyInteger with value range
+     *                          from 0 to 15 in order to work with this
+     *                          set of functions.
      */
     public static void generateAdjacentTrees(World world, BlockPos pos, IBlockState state,
                                        int trunkSize, int maxFoliageHeight, int offset, IBlockState trunkBlockType,
